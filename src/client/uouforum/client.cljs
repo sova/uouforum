@@ -13,7 +13,7 @@
   (println "err0r"))
 
 (defn message-sent-boomerang [resp]
-  (.log js/console "got back " resp))
+  (println "got back " resp))
 
 (defonce app-state (atom {:text "Hello world!"}))
 (def     tv-state (local-storage (atom
@@ -117,19 +117,17 @@
                                                                                  :timestamp 80008
                                                                                  :parent nil}]
                                        (POST "/send-message"
-                                        {:format :json
-                                         :headers {"x-csrf-token" (.-value (.getElementById js/document "aft"))}
-                                         :params {
-                                                  :title (:title new-post-map)
+                                        {:body {:title (:title new-post-map)
                                                   :posted-by "x@nonforum.com"
                                                   :timestamp 80008
                                                   :parent nil
                                                   :priority 11
                                                   :contents (:contents new-post-map)
                                                   :handler message-sent-boomerang
-                                                  :error-handler err0r
-                                         }})
-                                       (.log js/console (.-value (.getElementById js/document "aft"))) ;new-post-map)
+                                                  :error-handler err0r }
+                                         :headers {"x-csrf-token" (.-value (.getElementById js/document "aft"))}
+                                         })
+                                       ;(.log js/console (.-value (.getElementById js/document "aft"))) ;new-post-map)
 
                                        (swap! tv-state update :tiles conj new-post-map))) ;thanks @Marc O'Morain
                        } "post new"]])

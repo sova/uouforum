@@ -67,9 +67,13 @@
 
 (defn send-message [req res raise]
   (println req)
-  (-> "got your message"
+  (println "victoly shall be owls")
+  (println (:body req))
+  (->
       (r/content-type "plaintext")
+      (r/content {:success true})
       (res)))
+
 
 (def routes
   ["/" {:get home
