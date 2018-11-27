@@ -1,34 +1,38 @@
-.body-container {
-  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-top: 72px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.125em;
-  color: #333;
-  line-height: 1.5em;
+/* some style */
+
+#tv { border: 1px solid gray;}
+.heading {
+  font-size: 26px;
+  color: hsl(180, 90%, 20%);
+}
+.fullwidth {
+  width: 100%;
+  float: left;
+  clear: left;
 }
 
-h1, h2, h3 {
-  color: #000;
+.fbfb {
+  background-color: blue;
 }
-h1 {
-  font-size: 2.5em
+.gogo {
+  background-color: yellow;
 }
-
-h2 {
-  font-size: 2em
+.nfnf {
+  background-color: teal;
 }
-
-h3 {
-  font-size: 1.5em
-}
-
-a {
-  text-decoration: none;
-  color: #09f;
+.tile {
+  width: auto;
+  height: auto;
+  max-height: 180px;
+  font-size: 22px;
+  overflow-y: scroll;
+  border: 1px solid blue;
 }
 
-a:hover {
-  text-decoration: underline;
+#postinput {
+  border: 1px solid orange;
+}
+
+#postcommentinput {
+  border: 1px solid lightblue;
 }

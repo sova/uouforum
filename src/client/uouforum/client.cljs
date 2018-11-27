@@ -1,12 +1,19 @@
 (ns uouforum.client
     (:require [rum.core :as rum]
-              [alandipert.storage-atom :refer [local-storage]]))
+              [alandipert.storage-atom :refer [local-storage]]
+              [ajax.core :refer [GET POST]]))
 
 (enable-console-print!)
 
-(println "This text is printed from src/nfrum/core.cljs. Go ahead and edit it and see reloading in action.")
+(println "This text is printed from src/client/uouforum/client.cljs. Go ahead and edit it and see reloading in action.")
 
 ;; define your app data so that it doesn't get over-written on reload
+
+(defn err0r []
+  (println "err0r"))
+
+(defn message-sent-boomerang [resp]
+  (.log js/console "got back " resp))
 
 (defonce app-state (atom {:text "Hello world!"}))
 (def     tv-state (local-storage (atom
@@ -102,13 +109,27 @@
                                      ;(.preventDefault e)
                                      ;(.stopPropagation e)
                                      (.log js/console "sending..")
+                                     (.log js/console (.getElementById js/document "aft"))
                                      (let [new-post-map {:title (get-in @input-state [:inputs 0 :title])
                                                                                  :contents (get-in @input-state [:inputs 0 :contents])
                                                                                  :priority 10
                                                                                  :posted-by "x@nonforum.com"
                                                                                  :timestamp 80008
                                                                                  :parent nil}]
-                                       (.log js/console new-post-map)
+                                       (POST "/send-message"
+                                        {:format :json
+                                         :headers {"x-csrf-token" (.-value (.getElementById js/document "aft"))}
+                                         :params {
+                                                  :title (:title new-post-map)
+                                                  :posted-by "x@nonforum.com"
+                                                  :timestamp 80008
+                                                  :parent nil
+                                                  :priority 11
+                                                  :contents (:contents new-post-map)
+                                                  :handler message-sent-boomerang
+                                                  :error-handler err0r
+                                         }})
+                                       (.log js/console (.-value (.getElementById js/document "aft"))) ;new-post-map)
 
                                        (swap! tv-state update :tiles conj new-post-map))) ;thanks @Marc O'Morain
                        } "post new"]])

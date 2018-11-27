@@ -2,7 +2,8 @@
   (:require
     [bidi.bidi :as bidi]
     [hiccups.runtime]
-    [macchiato.util.response :as r])
+    [macchiato.util.response :as r]
+    [macchiato.middleware.anti-forgery :refer [*anti-forgery-token*]])
   (:require-macros
     [hiccups.core :refer [html]]))
 
@@ -17,11 +18,10 @@
           [:p
            "Your user-agent is: "
            (str (get-in req [:headers "user-agent"]))]
+          [:input#aft {:type "hidden" :value *anti-forgery-token*}]
           [:div#inputs]
           [:div#start]]
-         [:script {:src "js/client.js" :type "text/javascript"}]
-         ;[:script {:src "js/goog/base.js" :type "text/javascript"}]
-         ])
+         [:script {:src "js/client.js" :type "text/javascript"}]])
       (r/ok)
       (r/content-type "text/html")
       (res)))
@@ -65,10 +65,17 @@
       (r/content-type "text/html")
       (res)))
 
+(defn send-message [req res raise]
+  (println req)
+  (-> "got your message"
+      (r/content-type "plaintext")
+      (res)))
+
 (def routes
   ["/" {:get home
         "top" {:get top}
-        "latest" {:get latest}}])
+        "latest" {:get latest}
+        "send-message" {:post send-message}}])
 
 (defn router [req res raise]
   (if-let [{:keys [handler route-params]} (bidi/match-route* routes (:uri req) req)]

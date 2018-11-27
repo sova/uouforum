@@ -1,6 +1,6 @@
 (defproject uouforum "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+  :description "nonforum with tonsky/rum and yogthos/macchiato for javascript on client and server!"
+  :url "http://www.nonforum.com"
   :dependencies [[bidi "2.1.3"]
                  [com.cemerick/piggieback "0.2.2"]
                  [com.taoensso/timbre "4.10.0"]
@@ -13,7 +13,8 @@
                  ;; needed for JDK 9 compatibility
                  [javax.xml.bind/jaxb-api "2.3.0"]
                  [rum "0.11.2"]
-                 [alandipert/storage-atom "1.2.4"]]
+                 [alandipert/storage-atom "1.2.4"]
+                 [cljs-ajax "0.8.0"]]
   :min-lein-version "2.0.0"
   :jvm-opts ^:replace ["-Xmx1g" "-server"]
   :plugins [[lein-doo "0.1.7"]
@@ -56,6 +57,7 @@
     {:builds
      {:client
                {:source-paths ["src/client"]
+                :figwheel true ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;newaddition;;;;;;;;;;;;;;;;;;;;;
                 :compiler {:main uouforum.client
                            :output-to "public/js/client.js"
                            :output-dir "public/js/out"
@@ -98,8 +100,7 @@
               ["clean"]
               ["npm" "install"]
               ["with-profile" "release" "npm" "init" "-y"]
-              ["with-profile" "release" "cljsbuild" "once" "release"]
-]
+              ["with-profile" "release" "cljsbuild" "once" "release"]]
    "test" ["do"
            ["npm" "install"]
            ["with-profile" "test" "doo" "node"]]

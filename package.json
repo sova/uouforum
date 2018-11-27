@@ -1,7 +1,7 @@
 {
   "private" : true,
   "name" : "uouforum",
-  "description" : "FIXME: write this!",
+  "description" : "nonforum with tonsky/rum and yogthos/macchiato for javascript on client and server!",
   "version" : "0.1.0-SNAPSHOT",
   "dependencies" : {
     "random-bytes" : "1.0.0",
