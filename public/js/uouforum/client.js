@@ -1,0 +1,103 @@
+// Compiled by ClojureScript 1.10.339 {}
+goog.provide('uouforum.client');
+goog.require('cljs.core');
+goog.require('rum.core');
+goog.require('alandipert.storage_atom');
+cljs.core.enable_console_print_BANG_.call(null);
+cljs.core.println.call(null,"This text is printed from src/nfrum/core.cljs. Go ahead and edit it and see reloading in action.");
+if((typeof uouforum !== 'undefined') && (typeof uouforum.client !== 'undefined') && (typeof uouforum.client.app_state !== 'undefined')){
+} else {
+uouforum.client.app_state = cljs.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"text","text",-1790561697),"Hello world!"], null));
+}
+uouforum.client.tv_state = alandipert.storage_atom.local_storage.call(null,cljs.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"tiles","tiles",178505240),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"title","title",636505583),"Fusion Power Imminent",new cljs.core.Keyword(null,"contents","contents",-1567174023),"Horne Technologies has developed a working Plasma Containment Prototype for furthering Fusion",new cljs.core.Keyword(null,"priority","priority",1431093715),(1),new cljs.core.Keyword(null,"posted-by","posted-by",-66955024),"v@nonforum.com",new cljs.core.Keyword(null,"timestamp","timestamp",579478971),(808080808),new cljs.core.Keyword(null,"parent","parent",-878878779),null], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"title","title",636505583),"Let's Put Sun Panels on the Roof",new cljs.core.Keyword(null,"contents","contents",-1567174023),"Put a powerplant on your home and be free of your electric bill",new cljs.core.Keyword(null,"priority","priority",1431093715),(2),new cljs.core.Keyword(null,"posted-by","posted-by",-66955024),"v@nonforum.com",new cljs.core.Keyword(null,"timestamp","timestamp",579478971),(808080808),new cljs.core.Keyword(null,"parent","parent",-878878779),null], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"title","title",636505583),"Tonsky/rum is excellent for cljs",new cljs.core.Keyword(null,"contents","contents",-1567174023),"the best way to be the best",new cljs.core.Keyword(null,"priority","priority",1431093715),(3),new cljs.core.Keyword(null,"posted-by","posted-by",-66955024),"v@nonforum.com",new cljs.core.Keyword(null,"timestamp","timestamp",579478971),(808080808),new cljs.core.Keyword(null,"parent","parent",-878878779),null], null),new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword(null,"title","title",636505583),"Postpostpost",new cljs.core.Keyword(null,"contents","contents",-1567174023),"this is the post!",new cljs.core.Keyword(null,"link","link",-1769163468),"http://hysterical.com",new cljs.core.Keyword(null,"priority","priority",1431093715),(4),new cljs.core.Keyword(null,"posted-by","posted-by",-66955024),"v@nonforum.com",new cljs.core.Keyword(null,"timestamp","timestamp",579478971),(808080808),new cljs.core.Keyword(null,"parent","parent",-878878779),null], null)], null)], null)),new cljs.core.Keyword(null,"tv","tv",-1805207359));
+uouforum.client.input_state = cljs.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"inputs","inputs",865803858),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"title","title",636505583),"",new cljs.core.Keyword(null,"contents","contents",-1567174023),"",new cljs.core.Keyword(null,"comment","comment",532206069),"ur coment"], null)], null)], null));
+uouforum.client.link = rum.core.build_defc.call(null,(function (address){
+return React.createElement("a",({"href": address}),sablono.interpreter.interpret.call(null,address));
+}),null,"link");
+uouforum.client.hello_world = rum.core.build_defc.call(null,(function (){
+return React.createElement("div",null,(function (){var attrs25710 = new cljs.core.Keyword(null,"text","text",-1790561697).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,uouforum.client.app_state));
+return cljs.core.apply.call(null,React.createElement,"h1",((cljs.core.map_QMARK_.call(null,attrs25710))?sablono.interpreter.attributes.call(null,attrs25710):null),((cljs.core.map_QMARK_.call(null,attrs25710))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25710)], null)));
+})(),React.createElement("h3",null,"Edit this and watch it change!"),React.createElement("h4",null,"Nonforum lives again!"));
+}),null,"hello-world");
+uouforum.client.top_bar = rum.core.build_defc.call(null,(function (){
+return React.createElement("div",({"id": "topbar"}),React.createElement("ol",({"className": "topbar"}),React.createElement("li",null,React.createElement("a",({"href": "/"}),"nonforum")),(function (){var attrs25717 = uouforum.client.link.call(null,"top");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25717))?sablono.interpreter.attributes.call(null,attrs25717):null),((cljs.core.map_QMARK_.call(null,attrs25717))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25717)], null)));
+})(),(function (){var attrs25718 = uouforum.client.link.call(null,"latest");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25718))?sablono.interpreter.attributes.call(null,attrs25718):null),((cljs.core.map_QMARK_.call(null,attrs25718))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25718)], null)));
+})(),(function (){var attrs25719 = uouforum.client.link.call(null,"submit");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25719))?sablono.interpreter.attributes.call(null,attrs25719):null),((cljs.core.map_QMARK_.call(null,attrs25719))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25719)], null)));
+})(),(function (){var attrs25720 = uouforum.client.link.call(null,"feed");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25720))?sablono.interpreter.attributes.call(null,attrs25720):null),((cljs.core.map_QMARK_.call(null,attrs25720))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25720)], null)));
+})()));
+}),null,"top-bar");
+uouforum.client.side_bar = rum.core.build_defc.call(null,(function (){
+return React.createElement("div",({"id": "sidebar"}),React.createElement("ol",({"className": "sidebar"}),(function (){var attrs25721 = uouforum.client.link.call(null,"profile");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25721))?sablono.interpreter.attributes.call(null,attrs25721):null),((cljs.core.map_QMARK_.call(null,attrs25721))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25721)], null)));
+})(),(function (){var attrs25722 = uouforum.client.link.call(null,"settings");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25722))?sablono.interpreter.attributes.call(null,attrs25722):null),((cljs.core.map_QMARK_.call(null,attrs25722))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25722)], null)));
+})(),(function (){var attrs25723 = uouforum.client.link.call(null,"feedback");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25723))?sablono.interpreter.attributes.call(null,attrs25723):null),((cljs.core.map_QMARK_.call(null,attrs25723))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25723)], null)));
+})(),(function (){var attrs25724 = uouforum.client.link.call(null,"logout");
+return cljs.core.apply.call(null,React.createElement,"li",((cljs.core.map_QMARK_.call(null,attrs25724))?sablono.interpreter.attributes.call(null,attrs25724):null),((cljs.core.map_QMARK_.call(null,attrs25724))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25724)], null)));
+})()));
+}),null,"side-bar");
+uouforum.client.login_bar = rum.core.build_defc.call(null,(function (){
+return React.createElement("div",({"id": "loginbar"}),React.createElement("ol",({"className": "loginbar"}),React.createElement("li",({"className": "fbfb"}),React.createElement("a",({"href": "/facebook"}),"fb login")),React.createElement("li",({"className": "gogo"}),React.createElement("a",({"href": "/gogole"}),"gogole loign")),React.createElement("li",({"className": "nfnf"}),React.createElement("a",({"href": "/nflogin"}),"nonforum login"))));
+}),null,"login-bar");
+uouforum.client.tv_cell = rum.core.build_defc.call(null,(function (td){
+return React.createElement("li",null,React.createElement("div",({"id": ["tile",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"priority","priority",1431093715).cljs$core$IFn$_invoke$arity$1(td))].join(''), "className": "tile"}),(function (){var attrs25727 = new cljs.core.Keyword(null,"title","title",636505583).cljs$core$IFn$_invoke$arity$1(td);
+return cljs.core.apply.call(null,React.createElement,"div",((cljs.core.map_QMARK_.call(null,attrs25727))?sablono.interpreter.attributes.call(null,sablono.normalize.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["heading"], null)], null),attrs25727)):({"className": "heading"})),((cljs.core.map_QMARK_.call(null,attrs25727))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25727)], null)));
+})(),(function (){var attrs25728 = new cljs.core.Keyword(null,"contents","contents",-1567174023).cljs$core$IFn$_invoke$arity$1(td);
+return cljs.core.apply.call(null,React.createElement,"div",((cljs.core.map_QMARK_.call(null,attrs25728))?sablono.interpreter.attributes.call(null,sablono.normalize.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["contents"], null)], null),attrs25728)):({"className": "contents"})),((cljs.core.map_QMARK_.call(null,attrs25728))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25728)], null)));
+})(),(function (){var attrs25729 = new cljs.core.Keyword(null,"priority","priority",1431093715).cljs$core$IFn$_invoke$arity$1(td);
+return cljs.core.apply.call(null,React.createElement,"div",((cljs.core.map_QMARK_.call(null,attrs25729))?sablono.interpreter.attributes.call(null,sablono.normalize.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["priority"], null)], null),attrs25729)):({"className": "priority"})),((cljs.core.map_QMARK_.call(null,attrs25729))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25729)], null)));
+})()));
+}),null,"tv-cell");
+uouforum.client.television = rum.core.build_defc.call(null,(function (){
+return React.createElement("div",({"id": "tv"}),(function (){var attrs25730 = cljs.core.map.call(null,uouforum.client.tv_cell,new cljs.core.Keyword(null,"tiles","tiles",178505240).cljs$core$IFn$_invoke$arity$1(rum.core.react.call(null,uouforum.client.tv_state)));
+return cljs.core.apply.call(null,React.createElement,"ol",((cljs.core.map_QMARK_.call(null,attrs25730))?sablono.interpreter.attributes.call(null,sablono.normalize.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["tv"], null)], null),attrs25730)):({"className": "tv"})),((cljs.core.map_QMARK_.call(null,attrs25730))?null:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25730)], null)));
+})());
+}),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [rum.core.reactive], null),"television");
+uouforum.client.post_input = rum.core.build_defc.call(null,(function (){
+return React.createElement("form",({"id": "postinput"}),sablono.interpreter.create_element.call(null,"input",({"placeHolder": "title", "onChange": (function (e){
+cljs.core.swap_BANG_.call(null,uouforum.client.input_state,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"title","title",636505583)], null),e.target.value);
+
+return console.log(cljs.core.get_in.call(null,cljs.core.deref.call(null,uouforum.client.input_state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"title","title",636505583)], null)));
+}), "className": "fullwidth"})),sablono.interpreter.create_element.call(null,"input",({"placeHolder": "contents", "onChange": (function (e){
+cljs.core.swap_BANG_.call(null,uouforum.client.input_state,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"contents","contents",-1567174023)], null),e.target.value);
+
+return console.log(cljs.core.get_in.call(null,cljs.core.deref.call(null,uouforum.client.input_state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"contents","contents",-1567174023)], null)));
+}), "className": "fullwidth"})),React.createElement("button",({"type": "button", "onClick": (function (e){
+console.log("sending..");
+
+var new_post_map = new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"title","title",636505583),cljs.core.get_in.call(null,cljs.core.deref.call(null,uouforum.client.input_state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"title","title",636505583)], null)),new cljs.core.Keyword(null,"contents","contents",-1567174023),cljs.core.get_in.call(null,cljs.core.deref.call(null,uouforum.client.input_state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"contents","contents",-1567174023)], null)),new cljs.core.Keyword(null,"priority","priority",1431093715),(10),new cljs.core.Keyword(null,"posted-by","posted-by",-66955024),"x@nonforum.com",new cljs.core.Keyword(null,"timestamp","timestamp",579478971),(80008),new cljs.core.Keyword(null,"parent","parent",-878878779),null], null);
+console.log(new_post_map);
+
+return cljs.core.swap_BANG_.call(null,uouforum.client.tv_state,cljs.core.update,new cljs.core.Keyword(null,"tiles","tiles",178505240),cljs.core.conj,new_post_map);
+}), "className": "fullwidth"}),"post new"));
+}),null,"post-input");
+uouforum.client.post_comment_input = rum.core.build_defc.call(null,(function (){
+return React.createElement("form",({"id": "postcommentinput"}),sablono.interpreter.create_element.call(null,"textarea",({"value": cljs.core.get_in.call(null,cljs.core.deref.call(null,uouforum.client.input_state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"comment","comment",532206069)], null)), "placeHolder": "your comment", "onChange": (function (e){
+cljs.core.swap_BANG_.call(null,uouforum.client.input_state,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"comment","comment",532206069)], null),e.target.value);
+
+return console.log(cljs.core.get_in.call(null,cljs.core.deref.call(null,uouforum.client.input_state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"inputs","inputs",865803858),(0),new cljs.core.Keyword(null,"comment","comment",532206069)], null)));
+}), "className": "fullwidth"})),React.createElement("button",({"type": "submit", "className": "fullwidth"}),"post comment"));
+}),null,"post-comment-input");
+uouforum.client.nf_login_input = rum.core.build_defc.call(null,(function (){
+return React.createElement("form",({"id": "nflogin"}),sablono.interpreter.create_element.call(null,"input",({"placeHolder": "username", "className": "fullwidth"})),sablono.interpreter.create_element.call(null,"input",({"placeHolder": "password", "type": "password", "className": "fullwidth"})),React.createElement("button",({"type": "submit", "className": "fullwidth"}),"login"));
+}),null,"nf-login-input");
+uouforum.client.input_fields = rum.core.build_defc.call(null,(function (){
+var attrs25735 = uouforum.client.post_input.call(null);
+return cljs.core.apply.call(null,React.createElement,"div",((cljs.core.map_QMARK_.call(null,attrs25735))?sablono.interpreter.attributes.call(null,sablono.normalize.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"id","id",-1388402092),"inputs-contain"], null),attrs25735)):({"id": "inputs-contain"})),((cljs.core.map_QMARK_.call(null,attrs25735))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,uouforum.client.post_comment_input.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.nf_login_input.call(null))], null):new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25735),sablono.interpreter.interpret.call(null,uouforum.client.post_comment_input.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.nf_login_input.call(null))], null)));
+}),null,"input-fields");
+uouforum.client.start = rum.core.build_defc.call(null,(function (){
+var attrs25736 = uouforum.client.top_bar.call(null);
+return cljs.core.apply.call(null,React.createElement,"div",((cljs.core.map_QMARK_.call(null,attrs25736))?sablono.interpreter.attributes.call(null,sablono.normalize.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"id","id",-1388402092),"maincontain"], null),attrs25736)):({"id": "maincontain"})),((cljs.core.map_QMARK_.call(null,attrs25736))?new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,uouforum.client.side_bar.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.login_bar.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.television.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.hello_world.call(null))], null):new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs25736),sablono.interpreter.interpret.call(null,uouforum.client.side_bar.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.login_bar.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.television.call(null)),sablono.interpreter.interpret.call(null,uouforum.client.hello_world.call(null))], null)));
+}),null,"start");
+rum.core.mount.call(null,uouforum.client.start.call(null),document.getElementById("start"));
+rum.core.mount.call(null,uouforum.client.input_fields.call(null),document.getElementById("inputs"));
+uouforum.client.on_js_reload = (function uouforum$client$on_js_reload(){
+return null;
+});
+
+//# sourceMappingURL=client.js.map

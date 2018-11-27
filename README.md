@@ -12,11 +12,21 @@ run the following command in the terminal to install NPM modules and start Figwh
 lein build
 ```
 
+`lein cljsbuild once` will compile the client.js file
+
+
+
+
+
 run `node` in another terminal:
 
 ```
 npm start
 ```
+
+or
+
+``` node target/out/uouforum.js ```
 
 #### configuring the REPL
 

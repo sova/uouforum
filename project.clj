@@ -11,7 +11,9 @@
                  [org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.339"]
                  ;; needed for JDK 9 compatibility
-                 [javax.xml.bind/jaxb-api "2.3.0"]]
+                 [javax.xml.bind/jaxb-api "2.3.0"]
+                 [rum "0.11.2"]
+                 [alandipert/storage-atom "1.2.4"]]
   :min-lein-version "2.0.0"
   :jvm-opts ^:replace ["-Xmx1g" "-server"]
   :plugins [[lein-doo "0.1.7"]
@@ -30,7 +32,8 @@
                      :scripts {:start "node target/out/uouforum.js"}}}
      :dependencies [[figwheel-sidecar "0.5.16"]]
      :cljsbuild
-     {:builds {:dev
+     {:builds {
+              :dev
                {:source-paths ["env/dev" "src/server"]
                 :figwheel     true
                 :compiler     {:main          uouforum.app
@@ -48,6 +51,17 @@
       :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
      :source-paths ["env/dev"]
      :repl-options {:init-ns user}}]
+   :client
+   {:cljsbuild
+    {:builds
+     {:client
+               {:source-paths ["src/client"]
+                :compiler {:main uouforum.client
+                           :output-to "public/js/client.js"
+                           :output-dir "public/js/out"
+                           :asset-path "js/"
+                           :source-map-timestamp true
+                           :optimizations :advanced}}}}}
    :test
    {:cljsbuild
     {:builds
@@ -56,7 +70,7 @@
        :compiler     {:main uouforum.app
                       :output-to     "target/test/uouforum.js"
                       :target        :nodejs
-                      :optimizations :none
+                      :optimizations :whitespace
                       :pretty-print  true
                       :source-map    true}}}}
     :doo {:build "test"}
@@ -88,4 +102,6 @@
 ]
    "test" ["do"
            ["npm" "install"]
-           ["with-profile" "test" "doo" "node"]]})
+           ["with-profile" "test" "doo" "node"]]
+   "client" ["do"
+              ["with-profile" "client" "cljsbuild" "once" "client"]]})

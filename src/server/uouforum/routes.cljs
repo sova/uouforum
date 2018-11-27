@@ -16,7 +16,12 @@
           [:h2 "Huzzah Nonforum!"]
           [:p
            "Your user-agent is: "
-           (str (get-in req [:headers "user-agent"]))]]])
+           (str (get-in req [:headers "user-agent"]))]
+          [:div#inputs]
+          [:div#start]]
+         [:script {:src "js/client.js" :type "text/javascript"}]
+         ;[:script {:src "js/goog/base.js" :type "text/javascript"}]
+         ])
       (r/ok)
       (r/content-type "text/html")
       (res)))

@@ -1,0 +1,1 @@
+{:output-to "public/js/client.js", :output-dir "public/js", :optimizations :none}

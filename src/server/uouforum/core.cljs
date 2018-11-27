@@ -8,7 +8,7 @@
     [mount.core :as mount :refer [defstate]]
     [taoensso.timbre :refer-macros [log trace debug info warn error fatal]]))
 
-(defn server []
+(defn app []
   (mount/start)
   (let [host (or (:host @env) "127.0.0.1")
         port (or (some-> @env :port js/parseInt) 3000)]

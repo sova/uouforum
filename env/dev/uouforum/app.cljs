@@ -10,4 +10,4 @@
 
 (.on js/process "uncaughtException" #(js/console.error %))
 
-(set! *main-cli-fn* core/server)
+(set! *main-cli-fn* core/app)
